@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <title>Northcoders HTMLtask</title>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- header -->
+        <header>
+            <h1>Let's go! 🚀</h1>
+        </header>
+        <!-- aside -->
+        <aside>
+            <h2 id="aboutme">Me 🖖</h2>
+            <img src="./my_photo.jpg" alt="My awesome selfie" class="rounded bordered">
+            <p>Smart, handsome and fantastically talented</p>
+
+            <h2>My stats</h2>
+            <h3>Tech</h3>
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <h3>My day</h3>
+            <div>
+                <canvas id="myPieChart"></canvas> <!-- Контейнер для графіка -->
+            </div>
+            <ul>
+                <li> <a href="https://github.com/ua-rik" target="_blank">My GitHub</a></li>
+                <li> <a href="https://www.facebook.com/yaroslav.davydchuk" target="_blank">Facebook</a> </li>
+                <li>
+                    <a href="https://github.com/ua-rik/cv" target="_blank">CV</a> if u wanna hire me (Download <a
+                        href="https://github.com/ua-rik/cv/blob/main/2023-10%20CV%20Yaroslav%20Davydchuk.pdf">here</a> )
+                </li>
+                <li> <a href="https://www.linkedin.com/in/yaroslavdavydchuk/" target="_blank">LinkedIn</a></li>
+
+            </ul>
+        </aside>
+        <!-- main -->
+        <main>
+
+            
+            <h2>ToDo list for today</h2>
+            <p>so, lets create some "awesome" web-page 🤘❤️‍🔥</p>
+            <ol>
+                <li>💭 activate creative thinking</li>
+                <li>🌐 do some html</li>
+                <li>😎 find few emogis</li>
+                <li>🖼️ google funny pictures</li>
+            </ol>
+
+            <p>Any ideas? 💡 sure: </p>
+            <ul>
+                <li>hobby
+                    <ul>
+                        <li>Warhammer 40k ⚔️</li>
+                        <li>Mafia Game 🕵️‍♂️</li>
+                        <li>running 🏃‍♂️</li>
+                        <li>programming 💻</li>
+                        <li>books 📚</li>
+                    </ul>
+                </li>
+                <li>about me <a href="#aboutme">(for example here)</a> 🙋‍♂️</li>
+                <li>random phrases 🤷‍♂️</li>
+            </ul>
+            
+            <h2>Boring content 🥱</h2>
+            <p>... Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aut ab ducimus maxime vero
+                officia nobis perferendis, quasi enim esse porro fugit, voluptates asperiores corporis possimus. Quasi,
+                quis. Quidem, nostrum?</p>
+            <p>Ok... sounds boring. should do smthn more interesting</p>
+            
+            
+
+        </main>
+        <!-- footer -->
+
+        <footer>
+            <p>©️ Yaroslav Davydchuk, 2023, well, what else do they write in footers? </p>
+        </footer>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['HTML/CSS', 'Data Analysis', 'JS', 'Python', 'MySQL', 'MongoDB'],
+            datasets: [{
+                data: [5, 8, 6, 2, 8, 1],
+                borderWidth: 1
+            }]
+        },
+
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false // Приховати цифри на осі X
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 16,
+                            color: '#f5f5f5'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    const ctx2 = document.getElementById('myPieChart').getContext('2d');
+
+    new Chart(ctx2, {
+        type: 'doughnut', // Тип графіка - кругова діаграма
+        data: {
+            labels: ['Sleep', 'Northcoders', 'English', 'Family', 'Job'], // Назви сегментів
+            datasets: [{
+                data: [8, 8, 2, 3, 3], // Значення для кожного сегменту
+                backgroundColor: [ // Кольори для кожного сегменту
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [ // Кольори меж сегментів
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, // Графік адаптується під розмір контейнера
+        }
+    });
+</script>
+
+</html>
